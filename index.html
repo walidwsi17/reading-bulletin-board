@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Les 5 Composantes Essentielles de la Lecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --sky:    #4AAEE8;
+    --sun:    #F5C842;
+    --grass:  #5DBB6A;
+    --berry:  #E05C8A;
+    --grape:  #8B5CF6;
+    --cream:  #FFFDF7;
+    --ink:    #1E1B2E;
+    --muted:  #6B6880;
+    --card-r: 18px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Nunito', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #4AAEE8 0%, #8B5CF6 100%);
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '📚';
+    font-size: 180px;
+    opacity: .08;
+    position: absolute;
+    top: -20px; right: -20px;
+    line-height: 1;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,.2);
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 99px;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    max-width: 760px;
+    margin: 0 auto 16px;
+  }
+  .hero p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,.85);
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Lora', serif;
+    font-style: italic;
+  }
+
+  /* ── FIVE PILLARS NAV ── */
+  .pillars-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 28px 20px;
+    background: #fff;
+    border-bottom: 2px solid #f0eef8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  }
+  .pillars-nav a {
+    text-decoration: none;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 8px 18px;
+    border-radius: 99px;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .pillars-nav a:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,.15); }
+  .nav-1 { background: var(--sky);   color: #fff; }
+  .nav-2 { background: var(--sun);   color: var(--ink); }
+  .nav-3 { background: var(--grass); color: #fff; }
+  .nav-4 { background: var(--berry); color: #fff; }
+  .nav-5 { background: var(--grape); color: #fff; }
+
+  /* ── MAIN GRID ── */
+  main { max-width: 1100px; margin: 0 auto; padding: 48px 20px 80px; }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 72px;
+    scroll-margin-top: 90px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .section-icon {
+    width: 58px; height: 58px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem;
+    flex-shrink: 0;
+  }
+  .s1 .section-icon { background: #DFF0FC; }
+  .s2 .section-icon { background: #FEF5CC; }
+  .s3 .section-icon { background: #D9F5DE; }
+  .s4 .section-icon { background: #FCDDE9; }
+  .s5 .section-icon { background: #EDE9FE; }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  .section-title span {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    opacity: .55;
+  }
+  .s1 .section-title h2 { color: #1A78C2; }
+  .s2 .section-title h2 { color: #A07800; }
+  .s3 .section-title h2 { color: #27833A; }
+  .s4 .section-title h2 { color: #B8245B; }
+  .s5 .section-title h2 { color: #5B21B6; }
+
+  /* ── DEFINITION BOX ── */
+  .definition {
+    background: #fff;
+    border-radius: var(--card-r);
+    padding: 22px 26px;
+    margin-bottom: 24px;
+    border-left: 5px solid;
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .s1 .definition { border-color: var(--sky); }
+  .s2 .definition { border-color: var(--sun); }
+  .s3 .definition { border-color: var(--grass); }
+  .s4 .definition { border-color: var(--berry); }
+  .s5 .definition { border-color: var(--grape); }
+
+  /* ── VIDEO PLACEHOLDER ── */
+  .video-placeholder {
+    background: var(--ink);
+    border-radius: var(--card-r);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.7);
+    font-size: .88rem;
+    gap: 10px;
+    margin-bottom: 24px;
+    border: 3px dashed rgba(255,255,255,.15);
+  }
+  .video-placeholder .play { font-size: 2.5rem; }
+  .video-placeholder strong { color: #fff; font-size: 1rem; }
+
+  /* ── CARDS GRID ── */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 24px; }
+
+  .card {
+    background: #fff;
+    border-radius: var(--card-r);
+    padding: 22px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-label {
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 99px;
+    display: inline-block;
+    width: fit-content;
+  }
+  .s1 .card-label { background: #DFF0FC; color: #1A78C2; }
+  .s2 .card-label { background: #FEF5CC; color: #A07800; }
+  .s3 .card-label { background: #D9F5DE; color: #27833A; }
+  .s4 .card-label { background: #FCDDE9; color: #B8245B; }
+  .s5 .card-label { background: #EDE9FE; color: #5B21B6; }
+
+  .card h4 { font-size: 1rem; font-weight: 800; }
+  .card p  { font-size: .88rem; line-height: 1.65; color: var(--muted); }
+
+  .diff-box {
+    background: #F7F5FF;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: .82rem;
+    line-height: 1.6;
+    color: #4B3FA0;
+  }
+  .diff-box strong { display: block; margin-bottom: 4px; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; }
+
+  /* ── HOME + WEB ROW ── */
+  .home-web { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 24px; }
+  @media(max-width:560px){ .home-web { grid-template-columns: 1fr; } }
+
+  .hw-card {
+    background: #fff;
+    border-radius: var(--card-r);
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .hw-card .hw-icon { font-size: 1.6rem; }
+  .hw-card h4 { font-size: .95rem; font-weight: 800; }
+  .hw-card p  { font-size: .83rem; line-height: 1.65; color: var(--muted); }
+  .hw-card a  { font-size: .83rem; font-weight: 700; word-break: break-all; }
+  .s1 .hw-card a { color: var(--sky); }
+  .s2 .hw-card a { color: #A07800; }
+  .s3 .hw-card a { color: var(--grass); }
+  .s4 .hw-card a { color: var(--berry); }
+  .s5 .hw-card a { color: var(--grape); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e8e4f4, transparent);
+    margin: 0 0 72px;
+  }
+
+  /* ── REFERENCES ── */
+  .references {
+    background: #fff;
+    border-radius: var(--card-r);
+    padding: 32px 36px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.06);
+  }
+  .references h2 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  .references ol { padding-left: 22px; }
+  .references li {
+    font-size: .875rem;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-family: 'Lora', serif;
+  }
+  .references li em { color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 28px;
+    font-size: .8rem;
+    color: var(--muted);
+    border-top: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tag">Tableau d'affichage numérique — Petite Enfance Inclusive</div>
+  <h1>Les 5 Composantes Essentielles de la Lecture</h1>
+  <p>Fondé sur le rapport du National Reading Panel (2000) — ressources pour enseignants et familles</p>
+</header>
+
+<!-- NAV -->
+<nav class="pillars-nav">
+  <a href="#phonemic"       class="nav-1">🔊 Conscience phonémique</a>
+  <a href="#phonics"        class="nav-2">🔤 Phonique</a>
+  <a href="#vocabulary"     class="nav-3">📖 Vocabulaire</a>
+  <a href="#fluency"        class="nav-4">🎵 Fluidité</a>
+  <a href="#comprehension"  class="nav-5">💡 Compréhension</a>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════
+     1. CONSCIENCE PHONÉMIQUE
+══════════════════════════════════ -->
+<section class="section s1" id="phonemic">
+  <div class="section-header">
+    <div class="section-icon">🔊</div>
+    <div class="section-title">
+      <span>Composante 1</span>
+      <h2>Conscience phonémique</h2>
+    </div>
+  </div>
+
+  <div class="definition">
+    <strong>Définition :</strong> La conscience phonémique est la capacité à identifier, distinguer et manipuler les phonèmes — les plus petites unités sonores d'une langue. Par exemple, reconnaître que le mot <em>chat</em> contient trois phonèmes : /ʃ/, /a/, /t/. C'est une compétence orale et auditive, fondamentale avant l'apprentissage de la lecture et de l'écriture. Elle prédit fortement la réussite ultérieure en lecture (National Reading Panel, 2000).
+  </div>
+
+  <div class="video-placeholder">
+    <div class="play">▶️</div>
+    <strong>Vidéo de l'enseignant(e)</strong>
+    <span>Insérez ici votre vidéo définissant et expliquant la conscience phonémique</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-label">Activité 1 — Classe</span>
+      <h4>🎮 Jeu « Brise les mots ! »</h4>
+      <p>Les élèves reçoivent des images d'objets simples (chat, main, sole). En groupe, ils frappent dans les mains pour chaque phonème entendu, puis recomposent le mot. L'enseignant guide avec des manipulatifs (jetons colorés — un par phonème).</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves avec troubles du traitement auditif : utiliser des jetons tactiles et une amplification légère. Élèves doués : ajouter des mots de 5–6 phonèmes et inversions (lire à l'envers). Élèves DYS : privilégier la modalité visuelle avec des pictogrammes phonémiques.
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-label">Activité 2 — Classe</span>
+      <h4>🎵 Chansons à substitution phonémique</h4>
+      <p>Sur l'air d'une chanson connue, remplacer le phonème initial de chaque mot (ex. : « Frère Jacques » → « Prère Pacques »). L'activité développe la segmentation et la manipulation phonémique de manière ludique et mémorisable.</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves non verbaux / AAC : utiliser un tableau de communication pour désigner les sons. Élèves avec TDA/H : courtes séquences de 2 minutes avec mouvement. Pour les élèves avancés : substitution de phonèmes en finale et médiane.
+      </div>
+    </div>
+  </div>
+
+  <div class="home-web">
+    <div class="hw-card">
+      <div class="hw-icon">🏠</div>
+      <h4>Activité à la maison</h4>
+      <p><strong>« Qui peut trouver ? »</strong> — Les parents nomment des objets de la maison, et l'enfant isole le premier son. Ex. : « Table → /t/ ! ». On peut jouer dans la cuisine, le bain, la voiture. Cette activité est accessible à tous les enfants car elle ne nécessite aucun matériel ; pour les enfants avec des besoins particuliers, les parents peuvent ralentir le débit et utiliser des gestes d'accompagnement (comme la langue des signes pour le phonème ciblé).</p>
+    </div>
+    <div class="hw-card">
+      <div class="hw-icon">🌐</div>
+      <h4>Ressource web pour les familles</h4>
+      <a href="https://www.readingrockets.org" target="_blank">www.readingrockets.org</a>
+      <p>Reading Rockets propose des vidéos, des fiches et des jeux interactifs sur la conscience phonémique, disponibles en anglais et en espagnol. Les familles d'enfants avec dyslexie ou retard de langage y trouveront des activités structurées et progressives adaptées à différents niveaux ; les familles d'enfants en développement typique bénéficieront des jeux enrichissants pour préparer la lecture scolaire.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════
+     2. PHONIQUE
+══════════════════════════════════ -->
+<section class="section s2" id="phonics">
+  <div class="section-header">
+    <div class="section-icon">🔤</div>
+    <div class="section-title">
+      <span>Composante 2</span>
+      <h2>Phonique (Phonics)</h2>
+    </div>
+  </div>
+
+  <div class="definition">
+    <strong>Définition :</strong> La phonique est l'enseignement systématique des correspondances entre les lettres (graphèmes) et les sons (phonèmes). Elle permet à l'enfant de décoder des mots inconnus en appliquant des règles de correspondance graphème-phonème. Contrairement à la conscience phonémique qui est purement orale, la phonique relie le son à l'écrit. Un enseignement phonique explicite et systématique est l'une des approches les plus efficaces pour enseigner la lecture aux jeunes enfants (National Institute of Child Health and Human Development, 2000).
+  </div>
+
+  <div class="video-placeholder">
+    <div class="play">▶️</div>
+    <strong>Vidéo de l'enseignant(e)</strong>
+    <span>Insérez ici votre vidéo définissant et expliquant la phonique</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-label">Activité 1 — Classe</span>
+      <h4>🃏 Cartes de tri son-lettre</h4>
+      <p>Les élèves reçoivent des cartes illustrées et des cartes-lettres. Ils associent chaque image au graphème correspondant (ex. : image d'un soleil → lettre S). L'enseignant valide et corrige immédiatement. Les combinaisons de graphèmes sont introduites progressivement (simple → complexe).</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves avec déficiences visuelles : cartes en relief ou en grand format avec fort contraste. Élèves dyslexiques : polices adaptées (OpenDyslexic), codes couleur par famille phonique. Élèves avancés : créer leurs propres cartes avec des mots rares.
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-label">Activité 2 — Classe</span>
+      <h4>🏗️ Construction de mots avec lettres mobiles</h4>
+      <p>Avec des lettres magnétiques ou des tuiles de lettres, les élèves construisent des mots simples guidés par l'enseignant. Ils changent une lettre pour former un nouveau mot (ex. : chat → chapeau → charge), découvrant ainsi des familles de mots et des règles phoniques.</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves avec troubles moteurs fins : lettres surdimensionnées ou logiciel de lettres sur tablette. Élèves avec TDA/H : activité debout avec velcro mural. Élèves ELL (langue maternelle différente) : étiquettes bilingues sur les cartes.
+      </div>
+    </div>
+  </div>
+
+  <div class="home-web">
+    <div class="hw-card">
+      <div class="hw-icon">🏠</div>
+      <h4>Activité à la maison</h4>
+      <p><strong>« Chasse aux lettres »</strong> — Les parents et l'enfant fouillent la maison à la recherche d'objets dont le nom commence par la lettre de la semaine. Ils photographient les objets et créent un petit album. Cette activité engage les enfants sans exceptionality de manière autonome et créative ; pour les enfants avec des troubles d'apprentissage, la dimension visuelle et tangible (l'objet réel) renforce l'ancrage phonème-graphème mieux qu'un exercice sur papier.</p>
+    </div>
+    <div class="hw-card">
+      <div class="hw-icon">🌐</div>
+      <h4>Ressource web pour les familles</h4>
+      <a href="https://www.starfall.com" target="_blank">www.starfall.com</a>
+      <p>Starfall propose des activités interactives et des livres numériques structurés selon une progression phonique explicite, avec des animations sonores pour chaque lettre et combinaison. Les familles d'enfants avec dyslexie apprécieront le rythme lent et répétitif des leçons ; pour les autres enfants, le contenu ludique et coloré maintient l'engagement et renforce les correspondances graphème-phonème de manière autonome.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════
+     3. VOCABULAIRE
+══════════════════════════════════ -->
+<section class="section s3" id="vocabulary">
+  <div class="section-header">
+    <div class="section-icon">📖</div>
+    <div class="section-title">
+      <span>Composante 3</span>
+      <h2>Vocabulaire</h2>
+    </div>
+  </div>
+
+  <div class="definition">
+    <strong>Définition :</strong> Le vocabulaire désigne l'ensemble des mots qu'un enfant comprend (vocabulaire réceptif) et peut utiliser (vocabulaire expressif). Un vocabulaire riche est indispensable à la compréhension en lecture : on ne peut comprendre un texte si l'on ne connaît pas le sens des mots. L'enseignement du vocabulaire doit être direct (mots enseignés explicitement), élargi (expositions multiples et variées) et intégré dans des contextes signifiants (Beck, McKeown & Kucan, 2013).
+  </div>
+
+  <div class="video-placeholder">
+    <div class="play">▶️</div>
+    <strong>Vidéo de l'enseignant(e)</strong>
+    <span>Insérez ici votre vidéo définissant et expliquant le vocabulaire</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-label">Activité 1 — Classe</span>
+      <h4>🗺️ Carte de mots (Word Map)</h4>
+      <p>Pour chaque mot cible, les élèves remplissent une carte à 4 cases : définition avec leurs mots, image dessinée, exemple de phrase, antonyme/synonyme. Présenté après la lecture d'un album illustré, ce format multimodal aide à ancrer le vocabulaire nouveau.</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves avec troubles du langage : version simplifiée à 2 cases (image + mot). Élèves ELL : case supplémentaire pour le mot en langue maternelle. Élèves avancés : relier plusieurs cartes pour former un réseau sémantique.
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-label">Activité 2 — Classe</span>
+      <h4>🎭 Théâtre de vocabulaire</h4>
+      <p>Les élèves tirent un mot de vocabulaire au sort et le miment ou le dessinent au tableau pendant que la classe devine. L'enseignant enrichit : « Oui, c'est "furieux" — pouvez-vous faire une phrase ? ». Cette activité kinesthésique et sociale favorise la mémorisation contextuelle.</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves anxieux ou autistes (difficultés en situation de jeu de rôle) : choisir de dessiner plutôt que de mimer. Élèves avec handicap moteur : utiliser un système de pointage ou une tablette. Élèves avancés : définir le mot par l'étymologie ou en créer une phrase complexe.
+      </div>
+    </div>
+  </div>
+
+  <div class="home-web">
+    <div class="hw-card">
+      <div class="hw-icon">🏠</div>
+      <h4>Activité à la maison</h4>
+      <p><strong>« Le mot de la semaine »</strong> — Les parents sélectionnent un mot riche chaque semaine (ex. : « délicieux », « énorme », « fragile ») et l'utilisent naturellement dans les conversations familiales. L'enfant est invité à l'employer lui aussi et à expliquer ce qu'il signifie. Cette activité immersive bénéficie à tous les enfants car elle développe le vocabulaire en contexte réel ; pour les enfants avec des troubles du langage ou des retards de développement, la répétition naturelle et non contrainte dans l'environnement familier est particulièrement efficace pour la mémorisation.
+      </p>
+    </div>
+    <div class="hw-card">
+      <div class="hw-icon">🌐</div>
+      <h4>Ressource web pour les familles</h4>
+      <a href="https://www.vocabulary.com" target="_blank">www.vocabulary.com</a>
+      <p>Vocabulary.com propose des exercices adaptatifs qui ajustent automatiquement la difficulté au niveau de l'enfant, avec des définitions illustrées et des exemples en contexte. Pour les enfants avec des troubles d'apprentissage, le format adaptatif évite la frustration en ajustant le niveau ; pour les enfants en développement typique, les mini-défis et le système de points maintiennent une motivation durable.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════
+     4. FLUIDITÉ
+══════════════════════════════════ -->
+<section class="section s4" id="fluency">
+  <div class="section-header">
+    <div class="section-icon">🎵</div>
+    <div class="section-title">
+      <span>Composante 4</span>
+      <h2>Fluidité (Fluency)</h2>
+    </div>
+  </div>
+
+  <div class="definition">
+    <strong>Définition :</strong> La fluidité est la capacité à lire un texte avec précision, vitesse et expressivité appropriées, sans effort conscient excessif sur le décodage. Un lecteur fluide libère ses ressources cognitives pour se concentrer sur la compréhension. La fluidité se développe grâce à la pratique répétée de la lecture à voix haute dans un contexte bienveillant et avec rétroaction (Rasinski, 2010). Elle constitue un pont essentiel entre la reconnaissance des mots et la compréhension du texte.
+  </div>
+
+  <div class="video-placeholder">
+    <div class="play">▶️</div>
+    <strong>Vidéo de l'enseignant(e)</strong>
+    <span>Insérez ici votre vidéo définissant et expliquant la fluidité</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-label">Activité 1 — Classe</span>
+      <h4>🔁 Lecture en écho et lecture chorégraphiée</h4>
+      <p>L'enseignant lit une phrase à voix haute avec expressivité ; les élèves la répètent en écho en respectant le même rythme et la même intonation. Puis toute la classe lit ensemble un court poème ou un refrain. Cette technique modèle une lecture fluide et réduit l'anxiété liée à la performance individuelle.</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves avec bégaiement ou troubles de la parole : participation optionnelle en lecture silencieuse synchronisée. Élèves DYS : texte agrandi et aéré. Élèves avancés : lire avec différentes émotions ou jouer un personnage pour enrichir l'expressivité.
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-label">Activité 2 — Classe</span>
+      <h4>🎙️ Théâtre de lecteurs (Readers' Theater)</h4>
+      <p>Les élèves reçoivent un script adapté à leur niveau de lecture et s'entraînent à lire leur rôle à voix haute plusieurs fois. La représentation finale (sans mémorisation ni costumes) valorise la fluidité et l'expressivité devant un public naturel et bienveillant.</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves ayant peu de confiance ou autistes : rôle narrateur (moins exposé). Élèves avec troubles visuels : audio du script pour répétition. Élèves avancés : adapter eux-mêmes le texte pour ajouter des dialogues et enrichir le script.
+      </div>
+    </div>
+  </div>
+
+  <div class="home-web">
+    <div class="hw-card">
+      <div class="hw-icon">🏠</div>
+      <h4>Activité à la maison</h4>
+      <p><strong>« Mon livre préféré — encore ! »</strong> — Les parents encouragent l'enfant à relire plusieurs fois le même livre facile qu'il aime. Chaque relecture améliore la fluidité sans l'effort d'un nouveau décodage. Pour les enfants avec des troubles de lecture, la relecture répétée d'un texte familier réduit la charge cognitive et construit la confiance ; pour les enfants en développement typique, elle permet d'atteindre une fluidité automatique qui libère la capacité de compréhension.</p>
+    </div>
+    <div class="hw-card">
+      <div class="hw-icon">🌐</div>
+      <h4>Ressource web pour les familles</h4>
+      <a href="https://www.storylineonline.net" target="_blank">www.storylineonline.net</a>
+      <p>Storyline Online propose des lectures à voix haute d'albums illustrés par des acteurs professionnels, offrant un modèle exceptionnel de fluidité expressive. Pour les enfants avec des difficultés de lecture, entendre un lecteur modèle régulièrement normalise la lecture fluide et enrichit l'oreille ; pour tous les enfants, l'expressivité des lectures professionnelles inspire leur propre pratique orale.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════
+     5. COMPRÉHENSION
+══════════════════════════════════ -->
+<section class="section s5" id="comprehension">
+  <div class="section-header">
+    <div class="section-icon">💡</div>
+    <div class="section-title">
+      <span>Composante 5</span>
+      <h2>Compréhension</h2>
+    </div>
+  </div>
+
+  <div class="definition">
+    <strong>Définition :</strong> La compréhension en lecture est le but ultime de la lecture : construire du sens à partir d'un texte. Elle mobilise des stratégies actives telles que la prédiction, l'activation des connaissances antérieures, l'inférence, le questionnement, la visualisation, le résumé et la surveillance de sa propre compréhension (métacognition). L'enseignement explicite de stratégies de compréhension améliore significativement la performance des lecteurs de tous niveaux (Pressley & Afflerbach, 1995 ; Duke & Pearson, 2002).
+  </div>
+
+  <div class="video-placeholder">
+    <div class="play">▶️</div>
+    <strong>Vidéo de l'enseignant(e)</strong>
+    <span>Insérez ici votre vidéo définissant et expliquant la compréhension</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-label">Activité 1 — Classe</span>
+      <h4>🤔 Protocole « Je me demande… »</h4>
+      <p>Avant, pendant et après la lecture d'un album, l'enseignant modélise des questions de compréhension : « Je me demande pourquoi le personnage a fait ça... ». Les élèves posent à leur tour leurs questions sur des post-it et les classent en « Répondues » ou « Encore ouvertes ». L'activité développe la métacognition et le questionnement actif.</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves avec difficultés de langage : questions pré-formulées à choix (cocher la bonne réponse). Élèves autistes : questions littérales avant les inférences. Élèves avancés : connecter le texte à d'autres œuvres ou aux actualités.
+      </div>
+    </div>
+    <div class="card">
+      <span class="card-label">Activité 2 — Classe</span>
+      <h4>🎨 Carte mentale d'histoire (Story Map)</h4>
+      <p>Après la lecture, les élèves complètent une carte narrative visuelle : personnages, lieu, problème, événements clés, résolution. Ils peuvent dessiner, écrire ou coller des images. La structure visuelle explicite aide à organiser les éléments narratifs et renforce la mémoire et la compréhension du récit.</p>
+      <div class="diff-box">
+        <strong>🌟 Différenciation — Besoins particuliers</strong>
+        Élèves avec troubles de l'écriture : version orale enregistrée ou avec pictogrammes. Élèves avec TDA/H : carte simplifiée à 3 éléments. Élèves avancés : comparer deux cartes narratives d'histoires différentes et analyser les différences.
+      </div>
+    </div>
+  </div>
+
+  <div class="home-web">
+    <div class="hw-card">
+      <div class="hw-icon">🏠</div>
+      <h4>Activité à la maison</h4>
+      <p><strong>« Raconter à sa façon »</strong> — Après la lecture d'un livre, les parents demandent à l'enfant de raconter l'histoire avec ses propres mots, ou de l'inventer pour un personnage de jouet. Cette pratique simple de re-narration développe la compréhension, la mémoire narrative et la production orale. Pour les enfants avec des troubles du spectre autistique ou des difficultés de compréhension inférentielle, les parents peuvent poser des questions guidées très concrètes ; pour tous les enfants, l'interaction verbale avec un adulte attentif est l'un des meilleurs prédicteurs du développement langagier.</p>
+    </div>
+    <div class="hw-card">
+      <div class="hw-icon">🌐</div>
+      <h4>Ressource web pour les familles</h4>
+      <a href="https://www.pbslearningmedia.org" target="_blank">www.pbslearningmedia.org</a>
+      <p>PBS Learning Media propose des vidéos interactives et des guides de discussion liés à des émissions éducatives de qualité (Sesame Street, Daniel Tiger), accompagnés de questions de compréhension pour chaque âge. Pour les enfants avec des besoins particuliers, les supports multimédia (son + image + texte) facilitent l'accès au sens ; pour tous les apprenants, les questions de discussion guidée après chaque vidéo encouragent la pensée critique et la compréhension profonde.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     RÉFÉRENCES
+══════════════════════════════════ -->
+<section class="references">
+  <h2>📚 Références scientifiques (format APA)</h2>
+  <ol>
+    <li>
+      Beck, I. L., McKeown, M. G., &amp; Kucan, L. (2013). <em>Bringing words to life: Robust vocabulary instruction</em> (2nd ed.). Guilford Press.
+    </li>
+    <li>
+      Duke, N. K., &amp; Pearson, P. D. (2002). Effective practices for developing reading comprehension. In A. E. Farstrup &amp; S. J. Samuels (Eds.), <em>What research has to say about reading instruction</em> (3rd ed., pp. 205–242). International Reading Association.
+    </li>
+    <li>
+      National Institute of Child Health and Human Development. (2000). <em>Report of the National Reading Panel: Teaching children to read: An evidence-based assessment of the scientific research literature on reading and its implications for reading instruction</em> (NIH Publication No. 00-4769). U.S. Government Printing Office.
+    </li>
+    <li>
+      Rasinski, T. V. (2010). <em>The fluent reader: Oral and silent reading strategies for building fluency, word recognition, and comprehension</em> (2nd ed.). Scholastic.
+    </li>
+    <li>
+      Pressley, M., &amp; Afflerbach, P. (1995). <em>Verbal protocols of reading: The nature of constructively responsive reading</em>. Lawrence Erlbaum Associates.
+    </li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  Tableau d'affichage numérique — Éducation de la petite enfance inclusive · Fondé sur le National Reading Panel (2000) · Tous droits réservés
+</footer>
+
+</body>
+</html>
