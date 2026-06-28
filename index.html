@@ -20,20 +20,15 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--cream); font-family: 'Nunito', sans-serif; color: var(--ink); }
 
-  /* HERO */
   .hero {
     background: linear-gradient(135deg, #4AAEE8 0%, #8B5CF6 100%);
-    padding: 60px 24px 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    padding: 60px 24px 80px; text-align: center; position: relative; overflow: hidden;
   }
   .hero::before { content:'📚'; font-size:180px; opacity:.07; position:absolute; top:-20px; right:-20px; line-height:1; }
   .hero-tag { display:inline-block; background:rgba(255,255,255,.2); color:#fff; font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:6px 16px; border-radius:99px; margin-bottom:20px; }
   .hero h1 { font-size:clamp(1.8rem,5vw,3rem); font-weight:900; color:#fff; line-height:1.15; max-width:760px; margin:0 auto 16px; }
   .hero p { font-size:1rem; color:rgba(255,255,255,.85); max-width:600px; margin:0 auto; font-family:'Lora',serif; font-style:italic; }
 
-  /* NAV */
   .nav {
     display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
     padding:22px 20px; background:#fff; border-bottom:2px solid #f0eef8;
@@ -41,18 +36,14 @@
   }
   .nav a { text-decoration:none; font-size:.82rem; font-weight:700; letter-spacing:.04em; padding:8px 18px; border-radius:99px; transition:transform .15s,box-shadow .15s; }
   .nav a:hover { transform:translateY(-2px); box-shadow:0 4px 14px rgba(0,0,0,.15); }
-  .n1{background:var(--sky);color:#fff;}
-  .n2{background:var(--sun);color:var(--ink);}
-  .n3{background:var(--grass);color:#fff;}
-  .n4{background:var(--berry);color:#fff;}
+  .n1{background:var(--sky);color:#fff;} .n2{background:var(--sun);color:var(--ink);}
+  .n3{background:var(--grass);color:#fff;} .n4{background:var(--berry);color:#fff;}
   .n5{background:var(--grape);color:#fff;}
 
-  /* MAIN */
   main { max-width:1100px; margin:0 auto; padding:48px 20px 80px; }
 
-  /* SECTION */
   .section { margin-bottom:72px; scroll-margin-top:90px; }
-  .section-header { display:flex; align-items:center; gap:16px; margin-bottom:28px; }
+  .section-header { display:flex; align-items:center; gap:16px; margin-bottom:20px; }
   .section-icon { width:58px; height:58px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:1.7rem; flex-shrink:0; }
   .s1 .section-icon{background:#DFF0FC;} .s2 .section-icon{background:#FEF5CC;}
   .s3 .section-icon{background:#D9F5DE;} .s4 .section-icon{background:#FCDDE9;}
@@ -63,7 +54,19 @@
   .s3 .section-title h2{color:#27833A;} .s4 .section-title h2{color:#B8245B;}
   .s5 .section-title h2{color:#5B21B6;}
 
-  /* BLOCK LABEL */
+  /* DEFINITION BOX */
+  .definition-box {
+    border-radius:var(--r); padding:20px 24px; margin-bottom:28px;
+    font-family:'Lora',serif; font-size:.95rem; line-height:1.75;
+    border-left: 5px solid;
+  }
+  .s1 .definition-box { background:#EEF7FD; border-color:var(--sky); color:#0D4F7A; }
+  .s2 .definition-box { background:#FFFBE6; border-color:var(--sun); color:#6B4A00; }
+  .s3 .definition-box { background:#EAFAF0; border-color:var(--grass); color:#155724; }
+  .s4 .definition-box { background:#FEF0F5; border-color:var(--berry); color:#7A0A30; }
+  .s5 .definition-box { background:#F3EFFE; border-color:var(--grape); color:#3B1490; }
+  .definition-box strong { font-family:'Nunito',sans-serif; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; display:block; margin-bottom:8px; opacity:.7; }
+
   .block-label {
     font-size:.72rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
     padding:6px 14px; border-radius:99px; display:inline-block; margin-bottom:12px;
@@ -72,7 +75,6 @@
   .s3 .block-label{background:#D9F5DE;color:#27833A;} .s4 .block-label{background:#FCDDE9;color:#B8245B;}
   .s5 .block-label{background:#EDE9FE;color:#5B21B6;}
 
-  /* VIDEO PLACEHOLDER */
   .video-box {
     background:var(--ink); border-radius:var(--r); height:210px;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -83,7 +85,6 @@
   .video-box strong{color:#fff;font-size:1.05rem;}
   .video-box span{font-size:.82rem;}
 
-  /* CARDS */
   .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:18px; margin-bottom:24px; }
   .card { background:#fff; border-radius:var(--r); padding:22px; box-shadow:0 2px 12px rgba(0,0,0,.06); display:flex; flex-direction:column; gap:10px; }
   .card h4 { font-size:1rem; font-weight:800; }
@@ -92,7 +93,6 @@
   .diff-box { background:#F7F5FF; border-radius:10px; padding:12px 14px; font-size:.82rem; line-height:1.65; color:#4B3FA0; }
   .diff-box strong { display:block; margin-bottom:4px; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; }
 
-  /* HOME + WEB */
   .home-web { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:28px; }
   @media(max-width:560px){.home-web{grid-template-columns:1fr;}}
   .hw-card { background:#fff; border-radius:var(--r); padding:20px; box-shadow:0 2px 12px rgba(0,0,0,.06); display:flex; flex-direction:column; gap:8px; }
@@ -104,10 +104,8 @@
   .s3 .hw-card a{color:var(--grass);} .s4 .hw-card a{color:var(--berry);}
   .s5 .hw-card a{color:var(--grape);}
 
-  /* DIVIDER */
   hr.div { border:none; height:2px; background:linear-gradient(90deg,transparent,#e8e4f4,transparent); margin:0 0 72px; }
 
-  /* REFERENCES */
   .references { background:#fff; border-radius:var(--r); padding:32px 36px; box-shadow:0 2px 16px rgba(0,0,0,.06); }
   .references h2 { font-size:1.3rem; font-weight:900; margin-bottom:20px; }
   .references ol { padding-left:22px; }
@@ -144,7 +142,11 @@
     </div>
   </div>
 
-  <!-- VIDEO -->
+  <div class="definition-box">
+    <strong>📖 Definition</strong>
+    Phonemic awareness is the ability to hear, identify, and manipulate individual sounds — called phonemes — in spoken words. It is a purely oral and auditory skill that does not involve print. For example, a child with phonemic awareness can recognize that the word "cat" is made up of three sounds: /k/, /æ/, and /t/. Research consistently identifies phonemic awareness as one of the strongest predictors of later reading success (Scarborough, 2001).
+  </div>
+
   <span class="block-label">📹 Video — Definition &amp; Explanation</span>
   <div class="video-box">
     <div class="play">▶️</div>
@@ -152,40 +154,38 @@
     <span>Define and explain Phonemic Awareness</span>
   </div>
 
-  <!-- CLASSROOM ACTIVITIES -->
   <span class="block-label">🏫 Classroom Activities</span>
   <div class="cards">
     <div class="card">
-      <h4>Activity 1 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 1 : Sound Hunt Rhyming Walk</h4>
+      <p>Children search for objects that rhyme with a target word (e.g., "cat" → hat, mat), saying the rhyme aloud before collecting it. This engaging movement-based activity builds phonological awareness in an authentic, playful context.</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Smaller object sets and modeled rhymes for students with speech/language delays; texture-based objects with verbal description for visual impairments; short timed rounds with movement breaks for students with ADHD.
       </div>
     </div>
     <div class="card">
-      <h4>Activity 2 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 2 : Phoneme Segmentation with Manipulatives</h4>
+      <p>Children push one counter forward per sound in a CVC word (e.g., 3 counters for /s/-/u/-/n/), then blend it back together. This concrete, hands-on approach makes abstract phoneme segmentation visible and tangible for young learners.</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Larger objects for students with fine motor delays; visual mouth cues, signs, and direct eye contact for hearing impairments; familiar high-frequency words for ELs or students with language-based disabilities.
       </div>
     </div>
   </div>
 
-  <!-- HOME + WEBSITE -->
   <span class="block-label">🏠 Family Resources</span>
   <div class="home-web">
     <div class="hw-card">
       <div class="ico">🏠</div>
-      <h4>At-Home Activity</h4>
-      <p>Content coming soon.</p>
+      <h4>At-Home Activity : "I Spy" Sound Game</h4>
+      <p>A family member gives a beginning-sound clue ("I spy something that starts with /m/") and the child guesses, then they swap roles. This activity requires no materials, making it accessible regardless of fine motor or visual needs. Sound complexity can flex up or down to meet every learner's level.</p>
     </div>
     <div class="hw-card">
       <div class="ico">🌐</div>
       <h4>Website for Families</h4>
-      <a href="#">Link coming soon</a>
-      <p>Content coming soon.</p>
+      <a href="https://www.readingrockets.org/topics/phonological-and-phonemic-awareness" target="_blank">Reading Rockets — Phonological &amp; Phonemic Awareness</a>
+      <p>Reading Rockets offers age-banded videos and guidance specific to children with dyslexia or other reading difficulties. The site's structured, research-based activities support children with and without exceptionalities by providing clear progressions that families can follow at home.</p>
     </div>
   </div>
 </section>
@@ -202,6 +202,11 @@
     </div>
   </div>
 
+  <div class="definition-box">
+    <strong>📖 Definition</strong>
+    Phonics is the systematic instruction of the relationships between letters (graphemes) and the sounds they represent (phonemes). Unlike phonemic awareness, which is purely oral, phonics connects spoken sounds to written symbols, enabling children to decode unfamiliar words. Explicit, systematic phonics instruction is among the most effective approaches for teaching early reading and is essential for preventing and remediating reading difficulties (National Institute of Child Health and Human Development, 2000).
+  </div>
+
   <span class="block-label">📹 Video — Definition &amp; Explanation</span>
   <div class="video-box">
     <div class="play">▶️</div>
@@ -212,19 +217,19 @@
   <span class="block-label">🏫 Classroom Activities</span>
   <div class="cards">
     <div class="card">
-      <h4>Activity 1 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 1 : Letter-Sound Sorting Stations</h4>
+      <p>Children sort picture cards into letter-labeled bins by beginning sound (e.g., ball, bear, bat → "Bb"). The systematic, explicit introduction of one grapheme-phoneme pair at a time builds decoding skills progressively and with confidence.</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Textured letters and real objects for visual impairments; fewer categories with a modeled first example for students with intellectual or developmental disabilities; sorting by ending sound as an extension for advanced learners.
       </div>
     </div>
     <div class="card">
-      <h4>Activity 2 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 2 : Word Building with Magnetic/Velcro Letters</h4>
+      <p>Children build simple CVC words (cat, dog, sun) with letter tiles, saying each sound as they place it, then blending the full word aloud. Changing one letter at a time reveals how grapheme-phoneme relationships work within word families.</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Larger foam or Velcro letters for students with fine motor delays; color-coded vowels/consonants and multisensory tracing for dyslexia; familiar words and cognates introduced first for ELs.
       </div>
     </div>
   </div>
@@ -233,14 +238,14 @@
   <div class="home-web">
     <div class="hw-card">
       <div class="ico">🏠</div>
-      <h4>At-Home Activity</h4>
-      <p>Content coming soon.</p>
+      <h4>At-Home Activity : Pantry/Fridge Letter Hunt</h4>
+      <p>Families build simple words (milk, egg, jam) with magnetic letters using items found in the kitchen. This activity uses materials already at home and scales naturally from one starting sound to full blends. The tactile letter-moving also supports children with fine motor or sensory needs through multisensory engagement.</p>
     </div>
     <div class="hw-card">
       <div class="ico">🌐</div>
       <h4>Website for Families</h4>
-      <a href="#">Link coming soon</a>
-      <p>Content coming soon.</p>
+      <a href="https://www.readingrockets.org/topics/phonics-and-decoding" target="_blank">Reading Rockets — Phonics and Decoding</a>
+      <p>Reading Rockets provides structured phonics guidance for families, with activities adaptable to children at different skill levels. Its clear progressions and tips for children with dyslexia or learning disabilities make it a valuable resource for all families supporting early phonics development at home.</p>
     </div>
   </div>
 </section>
@@ -257,6 +262,11 @@
     </div>
   </div>
 
+  <div class="definition-box">
+    <strong>📖 Definition</strong>
+    Vocabulary refers to the words a child knows and understands — both receptively (words they comprehend when heard or read) and expressively (words they use in speaking and writing). A rich vocabulary is essential for reading comprehension: children cannot understand a text if they do not know the meaning of its words. Effective vocabulary instruction is explicit, provides multiple meaningful exposures, and embeds new words in rich, contextualized language experiences (Gay, 2018).
+  </div>
+
   <span class="block-label">📹 Video — Definition &amp; Explanation</span>
   <div class="video-box">
     <div class="play">▶️</div>
@@ -267,19 +277,19 @@
   <span class="block-label">🏫 Classroom Activities</span>
   <div class="cards">
     <div class="card">
-      <h4>Activity 1 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 1 : Interactive Read-Aloud with Word Talk</h4>
+      <p>The teacher pauses at 2–3 target words during a read-aloud, gives a child-friendly definition, models a sentence, and invites children to use or act out the word. Multiple exposures within a meaningful context support deep word learning for all students.</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Picture cards and gestures in place of verbal production for speech/language delays; pre-taught visual supports for deaf or hard-of-hearing learners; home language pre-teaching or cognates for ELs.
       </div>
     </div>
     <div class="card">
-      <h4>Activity 2 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 2 : Vocabulary Word Wall with Picture Cards</h4>
+      <p>A growing classroom word wall pairs new words with pictures and simple definitions, revisited during transitions throughout the day. Regular, brief exposure to the same words builds automaticity and moves new vocabulary into long-term memory over time.</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Large print, braille, and tactile objects for visual impairments; limit to 3–5 current words to reduce visual clutter for students with attention difficulties; add related synonyms or antonyms for advanced learners.
       </div>
     </div>
   </div>
@@ -288,14 +298,14 @@
   <div class="home-web">
     <div class="hw-card">
       <div class="ico">🏠</div>
-      <h4>At-Home Activity</h4>
-      <p>Content coming soon.</p>
+      <h4>At-Home Activity : "New Word of the Day"</h4>
+      <p>Pick one word from a book, meal, or outing, define it simply, and challenge the child to use it before bedtime. This activity is free, flexible, and fits naturally into any routine. Concrete words support children with language delays, while more abstract words serve as a stretch goal; repeated, meaningful use throughout the day helps move new vocabulary into long-term memory for all learners.</p>
     </div>
     <div class="hw-card">
       <div class="ico">🌐</div>
       <h4>Website for Families</h4>
-      <a href="#">Link coming soon</a>
-      <p>Content coming soon.</p>
+      <a href="https://www.pbs.org/parents/reading-language" target="_blank">PBS KIDS for Parents — Reading &amp; Language</a>
+      <p>PBS KIDS for Parents offers free, practical tips and activities to build vocabulary at home through everyday conversations, books, and play. The site's flexible, low-pressure approach benefits children with language delays by focusing on meaningful use in context, and enriches vocabulary development for all young learners through engaging family activities.</p>
     </div>
   </div>
 </section>
@@ -312,6 +322,11 @@
     </div>
   </div>
 
+  <div class="definition-box">
+    <strong>📖 Definition</strong>
+    Fluency is the ability to read text accurately, at an appropriate rate, and with expression — without labored effort on individual word decoding. A fluent reader frees cognitive resources to focus on meaning rather than mechanics. Fluency serves as the essential bridge between word recognition and reading comprehension, and is best developed through repeated oral reading practice with feedback and modeling (Rasinski, 2010).
+  </div>
+
   <span class="block-label">📹 Video — Definition &amp; Explanation</span>
   <div class="video-box">
     <div class="play">▶️</div>
@@ -322,19 +337,19 @@
   <span class="block-label">🏫 Classroom Activities</span>
   <div class="cards">
     <div class="card">
-      <h4>Activity 1 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 1 : Echo Reading with Predictable Text</h4>
+      <p>The teacher reads a line with expression from a repetitive pattern book; children echo back the same pacing, phrasing, and tone. This technique models fluent reading in a supportive, low-pressure setting and builds prosody naturally through imitation.</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Extra processing time and choral reading for students with speech delays or stuttering; large-print or high-contrast personal copies for low vision; more complex lines or peer-leading opportunities for fluent readers.
       </div>
     </div>
     <div class="card">
-      <h4>Activity 2 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 2 : Partner Reading with Readers' Theater Scripts</h4>
+      <p>Pairs read short adapted scripts aloud, practicing expression before performing for a small group. Repeated rehearsals dramatically improve accuracy, rate, and expression while providing an authentic, motivating purpose for rereading (Rasinski, 2010).</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Pair with a stronger reader and assign a short repeated-line part for students with reading-based LDs; brief scripts with movement for ADHD; advance written script and visible modeling for students with hearing impairments.
       </div>
     </div>
   </div>
@@ -343,14 +358,14 @@
   <div class="home-web">
     <div class="hw-card">
       <div class="ico">🏠</div>
-      <h4>At-Home Activity</h4>
-      <p>Content coming soon.</p>
+      <h4>At-Home Activity : Echo &amp; Switch Read-Aloud</h4>
+      <p>A family member reads a page with expression; the child echoes the same page, then they alternate through the book. This can be shortened to one sentence per turn or extended to full pages depending on the child's level. Hearing a fluent model first removes the decoding burden, letting the child focus on pacing and expression — which benefits children with reading difficulties and all developing readers alike.</p>
     </div>
     <div class="hw-card">
       <div class="ico">🌐</div>
       <h4>Website for Families</h4>
-      <a href="#">Link coming soon</a>
-      <p>Content coming soon.</p>
+      <a href="https://www.storylineonline.net" target="_blank">www.storylineonline.net</a>
+      <p>Storyline Online features professional actors reading high-quality picture books aloud with exceptional expression and pacing, providing an outstanding fluency model. For children with reading difficulties, regular exposure to a skilled reader normalizes expressive, fluent reading; for all children, the engaging performances inspire them to bring that same energy to their own oral reading practice.</p>
     </div>
   </div>
 </section>
@@ -367,6 +382,11 @@
     </div>
   </div>
 
+  <div class="definition-box">
+    <strong>📖 Definition</strong>
+    Reading comprehension is the ultimate goal of reading: the active process of constructing meaning from text. It requires readers to apply strategies such as predicting, questioning, visualizing, making inferences, and monitoring their own understanding. Comprehension depends on a strong foundation in the other four components — phonemic awareness, phonics, vocabulary, and fluency — and is significantly improved through explicit strategy instruction (Snow, 2002).
+  </div>
+
   <span class="block-label">📹 Video — Definition &amp; Explanation</span>
   <div class="video-box">
     <div class="play">▶️</div>
@@ -377,19 +397,19 @@
   <span class="block-label">🏫 Classroom Activities</span>
   <div class="cards">
     <div class="card">
-      <h4>Activity 1 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 1 : Retelling with Story Sequence Cards</h4>
+      <p>After a read-aloud, children arrange beginning/middle/end picture cards and retell the story in their own words. This structured retelling activity develops comprehension, narrative memory, and oral language simultaneously in a visually supported format.</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Two cards plus sentence starters for students with intellectual or developmental disabilities; pointing or arranging cards instead of verbal retelling for language delays; added "why" and prediction questions for advanced learners.
       </div>
     </div>
     <div class="card">
-      <h4>Activity 2 — [Title coming soon]</h4>
-      <p>Content coming soon.</p>
+      <h4>Activity 2 : Think-Aloud Picture Walk and Prediction</h4>
+      <p>Before reading, the teacher walks through the illustrations modeling wondering and prediction questions aloud, then checks predictions during reading. This metacognitive strategy builds the habit of active meaning-making before and during reading (Snow, 2002).</p>
       <div class="diff-box">
         <strong>⭐ Differentiation for Students with Exceptionalities</strong>
-        Content coming soon.
+        Detailed verbal descriptions and tactile books for visual impairments; shortened to 4–5 key pages for students with attention difficulties; pre-taught vocabulary from illustrations for ELs to support comprehension before reading begins.
       </div>
     </div>
   </div>
@@ -398,40 +418,28 @@
   <div class="home-web">
     <div class="hw-card">
       <div class="ico">🏠</div>
-      <h4>At-Home Activity</h4>
-      <p>Content coming soon.</p>
+      <h4>At-Home Activity : Story Map Conversation</h4>
+      <p>After reading, ask: "Who was in the story?", "What problem happened?", and "How was it solved?" — the child answers aloud or by drawing. Drawing instead of speaking makes this accessible for children with language delays or ELs. The structured, predictable question sequence breaks comprehension into manageable parts for children with attention or processing difficulties, while deepening understanding for all readers.</p>
     </div>
     <div class="hw-card">
       <div class="ico">🌐</div>
       <h4>Website for Families</h4>
-      <a href="#">Link coming soon</a>
-      <p>Content coming soon.</p>
+      <a href="https://www.pbs.org/parents/reading-language" target="_blank">PBS KIDS — Family Reading Time</a>
+      <p>PBS KIDS for Parents provides free reading guides, book lists, and comprehension conversation starters organized by age and skill level. The multimedia format (video + text + activity) provides multiple access points for children with special needs; the structured discussion guides help all families build meaningful comprehension conversations around the books they share together.</p>
     </div>
   </div>
 </section>
-
-<!-- DOWNLOAD BUTTON -->
-<div style="text-align:center; margin-bottom:32px;">
-  <a href="submission.docx" download
-     style="display:inline-flex; align-items:center; gap:10px;
-            background:linear-gradient(135deg,#4AAEE8,#8B5CF6);
-            color:#fff; font-family:'Nunito',sans-serif; font-weight:800;
-            font-size:1rem; padding:16px 32px; border-radius:99px;
-            text-decoration:none; box-shadow:0 4px 20px rgba(139,92,246,.35);
-            transition:transform .15s, box-shadow .15s;"
-     onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 28px rgba(139,92,246,.45)'"
-     onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(139,92,246,.35)'">
-    📄 Download Submission Document (Word)
-  </a>
-</div>
 
 <!-- REFERENCES -->
 <section class="references">
   <h2>📚 Scholarly References (APA Format)</h2>
   <ol>
-    <li>Reference 1 — coming soon.</li>
-    <li>Reference 2 — coming soon.</li>
-    <li>Reference 3 — coming soon.</li>
+    <li>Gay, G. (2018). <em>Culturally responsive teaching: Theory, research, and practice</em> (3rd ed.). Teachers College Press.</li>
+    <li>National Institute of Child Health and Human Development. (2000). <em>Report of the National Reading Panel: Teaching children to read</em> (NIH Publication No. 00-4769). U.S. Government Printing Office.</li>
+    <li>Reading Rockets. (n.d.). <em>Basics: Phonics and decoding.</em> WETA Public Broadcasting. https://www.readingrockets.org/topics/phonics-and-decoding</li>
+    <li>Reading Rockets. (n.d.). <em>Reading 101 for parents: Phonological and phonemic awareness.</em> WETA Public Broadcasting. https://www.readingrockets.org/topics/phonological-and-phonemic-awareness</li>
+    <li>Scarborough, H. S. (2001). Connecting early language and literacy to later reading (dis)abilities. In S. B. Neuman &amp; D. K. Dickinson (Eds.), <em>Handbook of early literacy research</em> (pp. 97–110). Guilford Press.</li>
+    <li>Snow, C. E. (2002). <em>Reading for understanding: Toward an R&amp;D program in reading comprehension.</em> RAND Corporation.</li>
   </ol>
 </section>
 
